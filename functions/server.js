@@ -2,13 +2,16 @@
 
 import express, { Router } from "express";
 import serverless from "serverless-http";
+import path from "path";
+
+const __dirname = path.dirname('./');
 
 const app = express();
 
 const router = Router();
 
 app.get("/", (req, res) => {
-    res.send("Hello Express & Netlify!")
+    res.sendFile('index.html', { root: __dirname });
 });
 
 app.get("/:universalURL", (req, res) => { 
