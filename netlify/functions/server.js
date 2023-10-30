@@ -15,7 +15,7 @@ app.get("/:universalURL", (req, res) => {
     res.send("404 URL NOT FOUND"); 
 });
 
-app.use("/netlify/functions/server", router);
+app.use("/.netlify/functions/server", router);
 
 export const handler = serverless(app);
 
