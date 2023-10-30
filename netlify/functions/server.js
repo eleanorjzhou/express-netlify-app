@@ -1,4 +1,4 @@
-// YOUR_BASE_DIRECTORY/netlify/functions/api.ts
+// YOUR_BASE_DIRECTORY/netlify/functions/server.js
 
 import express, { Router } from "express";
 import serverless from "serverless-http";
@@ -15,7 +15,7 @@ app.get("/:universalURL", (req, res) => {
     res.send("404 URL NOT FOUND"); 
 });
 
-app.use("/app/", router);
+app.use("/netlify/functions/server", router);
 
 export const handler = serverless(app);
 
